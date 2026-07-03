@@ -1,0 +1,123 @@
+@use "../../scss/colors" as *;
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+
+  backdrop-filter: blur(4px);
+}
+
+.room-modal {
+  position: relative;
+
+  width: 420px;
+  max-width: 90vw;
+
+  background: $surface;
+
+  border: 1px solid $border;
+  border-radius: 20px;
+
+  padding: 2rem;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+
+    color: $text-primary;
+  }
+}
+
+.close-btn {
+  position: absolute;
+
+  right: 1rem;
+  top: 1rem;
+
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: $text-secondary;
+
+  cursor: pointer;
+
+  font-size: 1.5rem;
+
+  &:hover {
+    background: $surface-hover;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.5rem;
+
+  margin-bottom: 1.25rem;
+
+  label {
+    color: $text-secondary;
+    font-size: 0.9rem;
+  }
+
+  input {
+    height: 48px;
+
+    background: $bg-secondary;
+
+    border: 1px solid $border;
+    border-radius: 10px;
+
+    padding: 0 1rem;
+
+    color: $text-primary;
+
+    font-size: 1rem;
+
+    outline: none;
+
+    &:focus {
+      border-color: $primary;
+    }
+  }
+}
+
+.submit-btn {
+  width: 100%;
+
+  height: 48px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: $primary;
+
+  color: white;
+
+  font-weight: 600;
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+
+  &:hover {
+    background: $primary-hover;
+  }
+}

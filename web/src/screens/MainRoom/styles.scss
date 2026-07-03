@@ -1,0 +1,187 @@
+@use "../../scss/colors" as *;
+
+$app-width: 1200px;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: $bg;
+  color: $text-primary;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.app {
+  max-width: $app-width;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  h1 {
+    margin: 0;
+  }
+
+  .room-id {
+    color: $text-secondary;
+  }
+}
+
+.board {
+  position: relative;
+  height: 700px;
+  margin-bottom: 2rem;
+}
+
+.table {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 450px;
+  min-height: 250px;
+
+  background: $surface;
+
+  border: 1px solid $border;
+
+  border-radius: 20px;
+
+  padding: 1.5rem;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  h2 {
+    margin-top: 0;
+  }
+
+  p {
+    color: $text-secondary;
+    line-height: 1.5;
+  }
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+
+  button {
+    border: none;
+    background: $primary;
+    color: white;
+
+    padding: 0.75rem 1.25rem;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    &:hover {
+      background: $primary-hover;
+    }
+  }
+}
+
+.participant {
+  position: absolute;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 0.4rem;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+
+  border-radius: 50%;
+
+  background: $primary;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+  font-size: 1.2rem;
+
+  color: white;
+}
+
+.participant-name {
+  font-size: 0.85rem;
+}
+
+.vote-state {
+  background: $surface;
+  border: 1px solid $border;
+
+  min-width: 36px;
+
+  text-align: center;
+
+  padding: 0.25rem 0.5rem;
+
+  border-radius: 8px;
+
+  color: $success;
+}
+
+.vote-panel {
+  background: $surface;
+  border: 1px solid $border;
+
+  border-radius: 20px;
+
+  padding: 1.5rem;
+}
+
+.vote-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.vote-card {
+  width: 70px;
+  height: 100px;
+
+  border-radius: 12px;
+
+  border: 1px solid $border;
+
+  background: $bg-secondary;
+
+  color: $text-primary;
+
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+
+  &:hover {
+    background: $surface-hover;
+  }
+
+  &.selected {
+    background: $primary;
+    border-color: $primary;
+    color: white;
+  }
+}
